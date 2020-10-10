@@ -1,0 +1,26 @@
+CREATE TABLE rm_ac_ap
+(
+  rm_ac_ap_id int,
+  fecha_alta date NOT NULL,
+  parada_id varchar(3),
+  fecha_fin date NOT NULL,
+  metros int NOT NULL,
+  kg int NOT NULL,
+  CONSTRAINT rm_ac_ap_pk PRIMARY KEY (rm_ac_ap_id) 
+);
+ 
+INSERT INTO rm_ac_ap VALUES (2,TO_DATE('18/07/2020:09:00:00PM','DD/MM/YYYY:HH:MM:SSAM'),'CB','18/07/2020:10:00:00PM',2300, 76);
+
+SELECT * FROM rm_ac_ap
+
+DROP TABLE rm_ac_ap
+
+create table date_range 
+(
+start_date date,
+end_date date
+);
+
+select * from date_range
+
+drop table date_range

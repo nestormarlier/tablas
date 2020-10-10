@@ -1,0 +1,37 @@
+PENDIENTE RELACION UNO A UNO CON FICHA_TECNICA
+
+CREATE TABLE ficha_setup
+(
+  ficha_setup_id int PRIMARY KEY,
+  colores int,
+  fecha_alta date NOT NULL,
+  activo varchar(1) NOT NULL,
+  fecha_baja date
+  CONSTRAINT fk_ficha_setup
+  FOREIGN KEY (ficha_tecnica_id)
+  REFERENCES fichatecnica(ficha_tecnica_id)
+);
+
+INSERT INTO ficha_setup VALUES (1,8,TO_DATE('01/01/2020','DD/MM/YYYY'),'V',null);
+INSERT INTO ficha_setup VALUES (2,7,TO_DATE('12/10/2015','DD/MM/YYYY'),'V',null);
+INSERT INTO ficha_setup VALUES (3,5,TO_DATE('11/09/2004','DD/MM/YYYY'),'F',TO_DATE('13/04/2010','DD/MM/YYYY'));
+
+SELECT * FROM ficha_setup
+
+DROP TABLE ficha_setup
+
+a) Cómo hago para crear Relaciones de UNO-UNO?
+
+    - Las relaciones uno a uno no son lo más común en un modelo relacional ya que podrían unirse las dos tablas en una,
+    de todos modos si sq quiere tener separada la información en dos tablas podrias crear una  Foreign Key y sobre la PK de la segunda tabla.
+
+CREATE TABLE a ( id NUMBER PRIMARY KEY,  dato VARCHAR2(10));
+
+CREATE TABLE b ( id NUMBER PRIMARY KEY, dato1 VARCHAR2(10), CONSTRAINT fk_b FOREIGN KEY (id) REFERENCES a(id));
+"ACTIVO"
+	'F' = Falso
+	'V' = Verdadero
+
+FECHA BAJA
+	null = "Si sigue la FT activa"
+	con Fecha Baja y activo = 'F'

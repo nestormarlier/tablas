@@ -1,0 +1,48 @@
+CREATE TABLE cambio_mecanico
+(
+  cambio_id int,
+  fecha_alta date NOT NULL,
+  parada_id varchar(3),
+  fecha_fin date NOT NULL,
+  CONSTRAINT cambio_mecanico_pk PRIMARY KEY (cambio_id) 
+);
+
+INSERT INTO cambio_mecanico VALUES (2,TO_DATE('18/07/2020 09:00:00PM','DD/MM/YYYY HH:MM:SSAM'),'CB',TO_DATE('18/07/2020 10:00:00PM','DD/MM/YYYY HH:MM:SSAM');
+
+INSERT INTO cambio_mecanico 
+select (2,to_date('2016/09/01 21:12:00','YYYY/MM/DD hh24:mi:ss'),'CB',to_date('2016/09/02 01:30:00','YYYY/MM/DD hh24:mi:ss')) from dual;
+
+SELECT * FROM cambio_mecanico
+
+DROP TABLE cambio_mecanico
+
+select dif from parada p1 
+WHERE P1.
+
+create table date_range 
+(
+start_date date,
+end_date date
+);
+
+create table result_table
+(
+date_ varchar2(10),
+hour_ varchar2(2),
+duration number
+);
+
+insert into date_range    
+select to_date('2016/09/01 21:12:00','YYYY/MM/DD hh24:mi:ss'),to_date('2016/09/02 01:30:00','YYYY/MM/DD hh24:mi:ss') from dual ;
+
+create table date_range 
+(
+start_date date,
+end_date date
+);
+
+select TO_CHAR(start_date, 'DD/MM/YYYY HH24:MI:SS') AS FECHA_INICIO from date_range
+
+drop table date_range
+
+select TO_CHAR(sysdate, '"Hours: "hh24", Minutes: "mi" Seconds: "ss') from dual;

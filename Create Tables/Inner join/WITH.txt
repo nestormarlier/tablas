@@ -1,0 +1,29 @@
+SELECT * FROM parada 
+
+SELECT * FROM cambio_mecanico
+
+SELECT * FROM parte_impresion_cambio
+
+SELECT * FROM parte_impresion_setup
+
+SELECT * FROM parte_impresion_produccion
+
+SELECT * from parada par INNER JOIN cambio_mecanico cambio ON par.id = cambio.parada_id
+
+SELECT * FROM parte_impresion
+
+SELECT * FROM parte_impresion_cambio
+
+SELECT parte_impresion_id,cambio_mecanico_id,parada_id,cambio.creacion,cambio.fecha_fin FROM parte_impresion_cambio parte INNER JOIN cambio_mecanico cambio ON parte.cambio_mecanico_id = cambio.cambio_id
+
+SELECT * FROM parte_impresion_setup
+
+SELECT parteS.parte_impresion_id,rm_ac_ap.setup_id,rm_ac_ap.creacion,fecha_fin,parada_id FROM parte_impresion_setup parteS INNER JOIN setup RM_AC_AP ON parteS.setup_id = RM_AC_AP.setup_id
+
+WITH
+PARTE_MAS_CAMBIO as(SELECT parte_impresion_id,cambio_mecanico_id,parada_id,cambio.creacion,cambio.fecha_fin FROM parte_impresion_cambio parte INNER JOIN cambio_mecanico cambio ON parte.cambio_mecanico_id = cambio.cambio_id),|
+PARTE_CAMBIO_PARADA AS (SELECT parte_impresion_id,cambio_mecanico_id,p.parada_id,p.creacion,fecha_fin,nombre,sector_asignado FROM parte_mas_cambio parte INNER JOIN parada p ON parte.parada_id = p.parada_id),
+SELECT * FROM PARTE_CAMBIO_PARADA
+
+PARTE_MAS_SETUP AS (SELECT parteS.parte_impresion_id,rm_ac_ap.setup_id,rm_ac_ap.creacion,fecha_fin,parada_id FROM parte_impresion_setup parteS INNER JOIN setup RM_AC_AP ON parteS.setup_id = RM_AC_AP.setup_id)
+SELECT parte_impresion_id,setup_id,p2.parada_id,parte2.creacion,fecha_fin,nombre,sector_asignado FROM parte_mas_setup parte2 INNER JOIN parada p2 ON parte2.parada_id = p2.parada_id

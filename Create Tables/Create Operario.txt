@@ -1,0 +1,52 @@
+CREATE TABLE operario
+(
+  legajo int PRIMARY KEY,
+  nombre varchar(20) NOT NULL,
+  apellido varchar(30) NOT NULL,
+  fecha_alta date NOT NULL,
+  categoria_id int NOT NULL,
+  activo varchar(1) NOT NULL,
+  fecha_baja date,
+  CONSTRAINT fk_categoria_comp
+  FOREIGN KEY (categoria_id)
+  REFERENCES categoria(categoria_id) ON DELETE CASCADE
+);
+
+SQLITE3
+INSERT INTO parteApp_operario VALUES (940,'Nestor','Marlier','2007-01-30',2,1,null);
+INSERT INTO parteApp_operario VALUES (555,'Pablo','Perez','2015-08-25',2,0,'2020-07-20');
+INSERT INTO parteApp_operario VALUES (650,'Raúl','Marquez','2010-04-13',2,1,null);
+INSERT INTO parteApp_operario VALUES (656,'Carlos','Fernandez','2013-07-15',1,1,null);
+INSERT INTO parteApp_operario VALUES (655,'Mario','Moreno','2015-10-25',1,1,null);
+INSERT INTO parteApp_operario VALUES (65,'Matias','Brown','2017-09-22',3,1,null);
+INSERT INTO parteApp_operario VALUES (657,'Walter','Quiroz','2018-11-02',4,1,null);
+INSERT INTO parteApp_operario VALUES (658,'Juan Pablo','Castro','2020-03-01',3,1,null);
+
+ORACLE
+INSERT INTO operario VALUES (940,'Nestor','Marlier',2,TO_DATE('30/01/2007','DD/MM/YYYY'),'V',null);
+INSERT INTO operario VALUES (700,'Tomas','Pereyra',1,TO_DATE('25/09/2000','DD/MM/YYYY'),'V',null);
+INSERT INTO operario VALUES (555,'Pablo','Perez',2,TO_DATE('13/04/1990','DD/MM/YYYY'),'F',TO_DATE('25/08/2015','DD/MM/YYYY'));
+INSERT INTO operario VALUES (650,'Raúl','Marquez',2,TO_DATE('13/04/2010','DD/MM/YYYY'),'V',null);
+INSERT INTO operario VALUES (655,'Mario','Moreno',1,TO_DATE('25/10/2015','DD/MM/YYYY'),'V',null);
+INSERT INTO operario VALUES (656,'Carlos','Fernandez',1,TO_DATE('15/07/2013','DD/MM/YYYY'),'V',null);
+INSERT INTO operario VALUES (65,'Matias','Brown',3,TO_DATE('22/09/2017','DD/MM/YYYY'),'V',null);
+INSERT INTO operario VALUES (657,'Walter','Quiroz',4,TO_DATE('02/11/2018','DD/MM/YYYY'),'V',null);
+INSERT INTO operario VALUES (658,'Juan Pablo','Castro',3,TO_DATE('01/03/2020','DD/MM/YYYY'),'V',null);
+
+
+SELECT * FROM operario
+
+UPDATE operario SET apellido = 'Pereyra' WHERE legajo = 700
+
+SELECT CAT.nombre, OPE.nombre, OPE.apellido FROM categoria cat INNER JOIN operario OPE ON cat.categoria_id = OPE.categoria_id
+ORDER BY CAT.nombre
+
+DROP TABLE operario
+
+"ACTIVO"
+	'F' = Falso
+	'V' = Verdadero
+
+FECHA BAJA
+	null = "Si sigue como maquinista"
+	con Fecha Baja y activo = 'F'

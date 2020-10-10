@@ -1,0 +1,36 @@
+CREATE TABLE impresora
+(
+  impresora_id int PRIMARY KEY,
+  nombre varchar(20),
+  fecha_alta date NOT NULL,
+  activo varchar(1) NOT NULL,
+  fecha_baja date
+);
+
+SQLITE3
+INSERT INTO parteApp_impresora VALUES (1,'IMPRESORA 1','2007-01-30',1,null);
+INSERT INTO parteApp_impresora VALUES (2,'IMPRESORA 2','2001-01-08',1,null);
+INSERT INTO parteApp_impresora VALUES (3,'IMPRESORA 3','2004-01-04',1,null);
+INSERT INTO parteApp_impresora VALUES (4,'IMPRESORA 4','2003-09-30',1,null);
+INSERT INTO parteApp_impresora VALUES (5,'IMPRESORA 5','2000-12-25',1,null);
+INSERT INTO parteApp_impresora VALUES (6,'IMPRESORA 5','2000-01-30',0,'2020-01-31');
+
+
+ORACLE
+INSERT INTO impresora VALUES (1,'IMPRESORA 1',TO_DATE('30/01/2007','DD/MM/YYYY'),'V',null);
+INSERT INTO impresora VALUES (2,'IMPRESORA 2',TO_DATE('30/01/2007','DD/MM/YYYY'),'V',null);
+INSERT INTO impresora VALUES (3,'IMPRESORA 3',TO_DATE('30/01/2007','DD/MM/YYYY'),'V',null);
+INSERT INTO impresora VALUES (4,'IMPRESORA 4',TO_DATE('30/01/2007','DD/MM/YYYY'),'V',null);
+INSERT INTO impresora VALUES (5,'IMPRESORA 5',TO_DATE('30/01/2007','DD/MM/YYYY'),'V',null);
+
+SELECT * FROM impresora
+
+DROP TABLE impresora
+
+"ACTIVO"
+	'F' = Falso
+	'V' = Verdadero
+
+FECHA BAJA
+	null = "Si sigue funcionando la impresora"
+	con Fecha Baja y activo = 'F'

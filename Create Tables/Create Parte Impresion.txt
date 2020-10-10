@@ -1,0 +1,49 @@
+CREATE TABLE parte_impresion
+(
+  parte_id int,
+  maquinista int,
+  supervisor int,
+  ayudante1ero,
+  ayudante2do,
+  ficha_tecnica_id int,
+  impresora_id int,
+  cambio_id int,
+  rm_ac_ap_id int,
+  produccion_id int,
+  fecha_alta date NOT NULL,
+  CONSTRAINT fk_operario_comp
+  FOREIGN KEY (legajo)
+  REFERENCES operario(legajo) ON DELETE CASCADE,
+  CONSTRAINT fk_impresora_comp
+  FOREIGN KEY (impresora_id)
+  REFERENCES impresora(impresora_id) ON DELETE CASCADE,
+  CONSTRAINT fk_ficha_tecnica_comp
+  FOREIGN KEY (ficha_tecnica_id)
+  REFERENCES ficha_tecnica(ficha_tecnica_id) ON DELETE CASCADE,
+  CONSTRAINT fk_cambio_mecanico_comp
+  FOREIGN KEY (cambio_id)
+  REFERENCES cambio_mecanico(cambio_id) ON DELETE CASCADE,
+  CONSTRAINT fk_rm_ac_ap_comp
+  FOREIGN KEY (rm_ac_ap_id)
+  REFERENCES rm_ac_ap(rm_ac_ap_id) ON DELETE CASCADE,
+  CONSTRAINT fk_produccion_comp
+  FOREIGN KEY (produccion_id)
+  REFERENCES produccion(produccion_id) ON DELETE CASCADE,
+  CONSTRAINT parte_impresion_pk PRIMARY KEY (parte_id,legajo,impresora_id,ficha_tecnica_id,cambio_id,produccion_id)
+);
+
+
+INSERT INTO parte_impresion VALUES (135208,940,1,600000,1,1,1,TO_DATE('17/07/2020:01:15:15PM','DD/MM/YYYY:HH:MI:SSAM'));
+
+drop table parte_impresion
+
+SELECT * FROM parte_impresion
+
+OF. 135208 PRIMARY KEY,
+LEGAJO 940 PRIMARY KEY,
+IMPRESORA 1 PRIMARY KEY,
+FT. 600000 PRIMARY KEY,
+CAMBIO_MECANICO ID 1 PRIMARY KEY,
+SETUP "RM-AC-AP_ID" PRIMARY KEY,
+PRODUCCION ID PRIMARY KEY,
+FECHA ALTA

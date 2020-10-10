@@ -1,0 +1,23 @@
+CREATE TABLE categoria
+(
+nombre varchar(30) NOT NULL UNIQUE,
+jefe int NOT NULL,
+categoria_id int PRIMARY KEY  
+);
+
+INSERT INTO parteApp_categoria VALUES ('SUPERVISOR',0,1);
+INSERT INTO parteApp_categoria VALUES ('MAQUINISTA',1,2);
+INSERT INTO parteApp_categoria VALUES ('1ER AYUDANTE',2,3);
+INSERT INTO parteApp_categoria VALUES ('2DO AYUDANTE',2,4);
+
+SELECT * from parteApp_categoria
+
+SELECT * FROM parteApp_categoria
+
+DROP TABLE parteApp_categoria
+
+SELECT nombre ||' SUBORDINADO DE '||
+PRIOR nombre "CATEGORIAS SUPERIOR A MENOR"
+FROM categoria
+START WITH nombre = 'SUPERVISOR' 
+CONNECT BY PRIOR categoria_id  = jefe

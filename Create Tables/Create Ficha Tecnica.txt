@@ -1,0 +1,31 @@
+CREATE TABLE ficha_tecnica
+(
+  ficha_tecnica_id int PRIMARY KEY,
+  nombre varchar(50) NOT NULL,
+  fecha_alta date NOT NULL,
+  activo varchar(1) NOT NULL,
+  fecha_baja date
+);
+
+SQLITE
+INSERT INTO parteApp_ficha_tecnica VALUES (1,'L3N LECHE ENTERA',1,'2020-01-01',1,NULL);
+INSERT INTO parteApp_ficha_tecnica VALUES (2,'L3N LECHE DESCREMADA',1,'2020-07-28',1,null);
+INSERT INTO parteApp_ficha_tecnica VALUES (3,'LECHE FORTUNA',0,'2020-01-01',1,'2020-05-13');
+
+ORACLE
+INSERT INTO ficha_tecnica VALUES (600000,'L3N LECHE ENTERA',TO_DATE('01/01/2020','DD/MM/YYYY'),'V',null);
+INSERT INTO ficha_tecnica VALUES (600001,'L3N LECHE DESCREMADA',TO_DATE('01/01/2020','DD/MM/YYYY'),'V',null);
+INSERT INTO ficha_tecnica VALUES (500000,'LECHE FORTUNA',TO_DATE('01/01/2015','DD/MM/YYYY'),'F',TO_DATE('13/04/2018','DD/MM/YYYY'));
+
+SELECT * FROM ficha_tecnica
+
+DROP TABLE ficha_tecnica
+
+
+"ACTIVO"
+	'F' = Falso
+	'V' = Verdadero
+
+FECHA BAJA
+	null = "Si sigue la FT activa"
+	con Fecha Baja y activo = 'F'

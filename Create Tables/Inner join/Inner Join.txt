@@ -1,0 +1,8 @@
+select * from operario ope INNER JOIN categoria cat on ope.categoria_id = cat.id
+ORDER BY CAT.nombre
+
+
+DEVUELVE TODOS LOS PARTES CON LOS CAMBIOS MECANICOS HECHOS
+
+SELECT * FROM parte_impresion_cambio part_cambio INNER JOIN parte_impresion parte on part_cambio.parteimpresion_id = parte.id
+INNER JOIN cambio_mecanico cambio on part_cambio.cambiomecanico_id = cambio.id

@@ -1,0 +1,18 @@
+CREATE TABLE produccion
+(
+  produccion_id int,
+  fecha_alta date NOT NULL,
+  parada_id varchar(3),
+  fecha_fin date NOT NULL,
+  metros int NOT NULL,
+  kg int NOT NULL,
+  CONSTRAINT produccion_pk PRIMARY KEY (produccion_id) 
+);
+
+
+INSERT INTO produccion
+SELECT (2,TO_DATE('18/07/2020:09:00:00PM','DD/MM/YYYY:HH:MM:SSAM'),'NULL',TO_DATE('18/07/2020:10:00:00PM','DD/MM/YYYY:HH:MM:SSAM'),200000,5500);
+
+SELECT * FROM produccion
+
+DROP TABLE produccion
