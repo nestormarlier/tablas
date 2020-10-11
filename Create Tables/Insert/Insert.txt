@@ -3,14 +3,14 @@ INSERT INTO categoria VALUES (2,'MAQUINISTA',1,'2020-09-20 09:00:00','2020-09-20
 INSERT INTO categoria VALUES (3,'1ER AYUDANTE',2,'2020-09-20 10:00:00','2020-09-20 21:00:00');
 INSERT INTO categoria VALUES (4,'2DO AYUDANTE',2,'2020-09-20 15:00:00','2020-09-20 23:00:00');
 
-INSERT INTO operario VALUES (940,'Nestor','Marlier','2007-01-30','2007-01-30',1,null,2);
-INSERT INTO operario VALUES (555,'Pablo','Mc Donald','2015-08-25','2015-08-25',0,'2020-07-20',2);
-INSERT INTO operario VALUES (650,'Raúl','Diaz','2010-04-13','2010-04-13',1,null,2);
-INSERT INTO operario VALUES (656,'Carlos','Fernandez','2013-07-15','2013-07-15',1,null,1);
-INSERT INTO operario VALUES (655,'Mario','Moreno','2015-10-25','2015-10-25',1,null,1);
-INSERT INTO operario VALUES (65,'Matias','Brown','2017-09-22','2017-09-22',1,null,3);
-INSERT INTO operario VALUES (657,'Walter','Quiroz','2018-11-02','2018-11-02',1,null,4);
-INSERT INTO operario VALUES (658,'Juan Pablo','Castro','2020-03-01','2020-03-01',1,null,3);
+INSERT INTO operario VALUES (940,'Nestor','Marlier','2007-01-30 12:00:00','2007-01-30 12:00:00',1,null,2);
+INSERT INTO operario VALUES (555,'Pablo','Mc Donald','2015-08-25 12:00:00','2015-08-25 12:00:00',0,'2020-07-20',2);
+INSERT INTO operario VALUES (650,'Raúl','Diaz','2010-04-13 12:00:00','2010-04-13 12:00:00',1,null,2);
+INSERT INTO operario VALUES (656,'Carlos','Fernandez','2013-07-15 12:00:00','2013-07-15 12:00:00',1,null,1);
+INSERT INTO operario VALUES (655,'Mario','Moreno','2015-10-25 12:00:00','2015-10-25 12:00:00',1,null,1);
+INSERT INTO operario VALUES (65,'Matias','Brown','2017-09-22 12:00:00','2017-09-22 12:00:00',1,null,3);
+INSERT INTO operario VALUES (657,'Walter','Quiroz','2018-11-02 12:00:00','2018-11-02 12:00:00',1,null,4);
+INSERT INTO operario VALUES (658,'Juan Pablo','Castro','2020-03-01 12:00:00','2020-03-01 12:00:00',1,null,3);
 
 INSERT INTO impresora VALUES (1,'IMPRESORA 1','2007-01-30','2007-01-30',1,null);
 INSERT INTO impresora VALUES (2,'IMPRESORA 2','2001-01-08','2001-01-08',1,null);
